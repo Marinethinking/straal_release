@@ -1,0 +1,420 @@
+/* OpenPortus promo frames — scoped from OpenPortus_Promotion/openportus-screenshots.html */
+.op-app-frames {
+  -webkit-font-smoothing: antialiased;
+}
+.op-app-frames *,
+.op-app-frames *::before,
+.op-app-frames *::after {
+  box-sizing: border-box;
+}
+.op-app-frames{
+  --straal-logo:url("logo-740.png");
+  --font-text:'Straal SF Pro Text','SF Pro Text',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-display:'Straal SF Pro Display','SF Pro Display','SF Pro Text',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+}
+@font-face{
+  font-family:'Straal SF Pro Text';
+  src:local('SF Pro Text'),local('SFProText-Regular'),local('.SFNSText-Regular'),local('SFNSText-Regular');
+  font-weight:100 900;
+  font-style:normal;
+}
+@font-face{
+  font-family:'Straal SF Pro Display';
+  src:local('SF Pro Display'),local('SFProDisplay-Regular'),local('.SFNSDisplay-Regular'),local('SFNSDisplay-Regular');
+  font-weight:100 900;
+  font-style:normal;
+}
+/* ── SCREENSHOT FRAME ────────────────────────────── */
+/* 6.7" = 1290×2796 → display at 1290/3 × 2796/3 = 430×932 */
+.op-app-frames .frame{
+  width:430px;
+  height:932px;
+  border-radius:40px;
+  overflow:hidden;
+  position:relative;
+  flex-shrink:0;
+  font-family:var(--font-text);
+  box-shadow:0 40px 120px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.06);
+}
+.op-app-frames .frame *{font-family:inherit}
+.op-app-frames .frame::before{
+  content:'';
+  position:absolute;
+  width:148px;
+  height:148px;
+  top:84px;
+  right:-34px;
+  z-index:1;
+  border-radius:38px;
+  background:var(--straal-logo) center/cover no-repeat;
+  opacity:0.18;
+  transform:rotate(-12deg);
+  mix-blend-mode:screen;
+  overflow:hidden;
+  pointer-events:none;
+}
+.op-app-frames .s2::before{top:44px;right:-26px;opacity:0.2;filter:saturate(0.8)}
+.op-app-frames .s3::before,.op-app-frames .s4::before{top:76px;right:24px;width:88px;height:88px;border-radius:24px;opacity:0.14;transform:rotate(8deg)}
+.op-app-frames .frame.exporting{
+  border-radius:0;
+  box-shadow:none;
+}
+
+/* ── SCREENSHOT 1: HOME ─────────────────────────── */
+.op-app-frames .s1{background:#f0f4f8;}
+.op-app-frames .s1 .bg-gradient{
+  position:absolute;inset:0;
+  background:linear-gradient(160deg,#1a3a6e 0%,#1d5fa8 35%,#2980d4 55%,#f0f4f8 75%);
+}
+.op-app-frames .s1 .headline{
+  position:absolute;
+  top:72px;left:36px;right:36px;
+  z-index:10;
+}
+.op-app-frames .s1 .headline .tag{
+  display:inline-block;
+  background:rgba(255,255,255,0.2);
+  border:1px solid rgba(255,255,255,0.3);
+  color:#fff;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  padding:5px 14px;
+  border-radius:20px;
+  margin-bottom:18px;
+  backdrop-filter:blur(8px);
+}
+.op-app-frames .s1 .headline h2{
+  font-family:var(--font-display);
+  font-size:40px;
+  font-weight:800;
+  color:#fff;
+  line-height:1.1;
+  letter-spacing:-0.02em;
+  text-shadow:0 2px 20px rgba(0,0,0,0.3);
+}
+.op-app-frames .s1 .headline h2 em{
+  font-style:normal;
+  color:#7dd3fc;
+}
+
+/* phone mockup sitting mid-frame */
+.op-app-frames .s1 .phone-wrap{
+  position:absolute;
+  bottom:210px;left:50%;
+  transform:translateX(-50%);
+  width:280px;
+  filter:drop-shadow(0 20px 60px rgba(0,0,0,0.5));
+  z-index:5;
+}
+.op-app-frames .s1 .phone-wrap img{
+  width:100%;border-radius:28px;
+  border:2px solid rgba(255,255,255,0.15);
+}
+
+/* bottom caption strip */
+.op-app-frames .caption-strip{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:200px;
+  background:#fff;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:0 32px;
+  z-index:20;
+}
+.op-app-frames .caption-strip::before{
+  content:'';
+  width:42px;
+  height:42px;
+  margin-bottom:4px;
+  border-radius:12px;
+  background:var(--straal-logo) center/cover no-repeat;
+  box-shadow:0 10px 26px rgba(85,120,173,0.28);
+  overflow:hidden;
+}
+.op-app-frames .caption-strip .app-name{
+  font-family:var(--font-display);
+  font-size:28px;
+  font-weight:800;
+  color:#0d1117;
+  letter-spacing:-0.02em;
+}
+.op-app-frames .caption-strip .tagline{
+  font-size:14px;
+  color:#64748b;
+  font-weight:400;
+  text-align:center;
+  line-height:1.5;
+}
+
+/* ── SCREENSHOT 2: MEMBERSHIP ──────────────────── */
+.op-app-frames .s2{background:#0a0e14;}
+.op-app-frames .s2 .bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 30%, rgba(205,145,60,0.25) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 20% 80%, rgba(61,142,240,0.1) 0%, transparent 50%),
+    #0a0e14;
+}
+.op-app-frames .s2 .top-text{
+  position:absolute;
+  top:72px;left:36px;right:36px;
+  z-index:10;
+}
+.op-app-frames .s2 .top-text .eyebrow{
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:0.15em;
+  text-transform:uppercase;
+  color:#cd913c;
+  margin-bottom:14px;
+}
+.op-app-frames .s2 .top-text h2{
+  font-family:var(--font-display);
+  font-size:36px;
+  font-weight:800;
+  color:#fff;
+  line-height:1.15;
+}
+.op-app-frames .s2 .top-text h2 span{color:#cd913c;}
+.op-app-frames .s2 .card-wrap{
+  position:absolute;
+  top:240px;left:30px;right:30px;
+  z-index:10;
+}
+.op-app-frames .membership-card{
+  background:linear-gradient(135deg,#b8762a 0%,#e8b96a 40%,#c9893a 70%,#9a5f1e 100%);
+  border-radius:24px;
+  padding:32px 28px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(180,120,40,0.4);
+}
+.op-app-frames .membership-card::before{
+  content:'';
+  position:absolute;
+  top:-40px;right:-40px;
+  width:200px;height:200px;
+  background:rgba(255,255,255,0.08);
+  border-radius:50%;
+}
+.op-app-frames .membership-card .card-star-deco{
+  position:absolute;
+  top:20px;right:24px;
+  width:80px;height:80px;
+  opacity:0.12;
+  color:#fff;
+  pointer-events:none;
+}
+.op-app-frames .membership-card .level{
+  font-family:var(--font-display);
+  font-size:28px;
+  font-weight:700;
+  color:#fff;
+  margin-bottom:20px;
+}
+.op-app-frames .membership-card .detail{
+  font-size:13px;
+  font-weight:600;
+  color:rgba(255,255,255,0.9);
+  margin-bottom:4px;
+}
+.op-app-frames .membership-card .val{
+  font-size:16px;
+  font-weight:300;
+  color:rgba(255,255,255,0.7);
+}
+.op-app-frames .s2 .features{
+  position:absolute;
+  top:520px;left:30px;right:30px;
+  z-index:10;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.op-app-frames .feat-row{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.07);
+  border-radius:16px;
+  padding:16px 20px;
+}
+.op-app-frames .feat-icon{
+  width:36px;height:36px;
+  border-radius:10px;
+  background:rgba(205,145,60,0.15);
+  border:1px solid rgba(205,145,60,0.25);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  color:#cd913c;
+}
+.op-app-frames .feat-icon svg{width:18px;height:18px;display:block;}
+.op-app-frames .feat-text .ft{font-size:13px;font-weight:600;color:#e2e8f0;}
+.op-app-frames .feat-text .fs{font-size:11px;color:#64748b;margin-top:2px;}
+.op-app-frames .s2 .caption-strip{background:#0a0e14;border-top:1px solid rgba(255,255,255,0.06);}
+.op-app-frames .s2 .caption-strip .app-name{color:#fff;}
+.op-app-frames .s2 .caption-strip .tagline{color:#64748b;}
+
+/* ── SCREENSHOT 3: INBOX ────────────────────────── */
+.op-app-frames .s3{background:#f8fafc;}
+.op-app-frames .s3 .top-bg{
+  position:absolute;
+  top:0;left:0;right:0;height:340px;
+  background:linear-gradient(180deg,#0d47a1 0%,#1565c0 60%,#f8fafc 100%);
+}
+.op-app-frames .s3 .top-text{
+  position:absolute;
+  top:68px;left:36px;right:36px;
+  z-index:10;
+}
+.op-app-frames .s3 .top-text .eyebrow{
+  font-size:11px;font-weight:600;
+  letter-spacing:0.15em;text-transform:uppercase;
+  color:rgba(255,255,255,0.7);margin-bottom:12px;
+}
+.op-app-frames .s3 .top-text h2{
+  font-family:var(--font-display);
+  font-size:36px;font-weight:800;
+  color:#fff;line-height:1.15;
+}
+.op-app-frames .s3 .notifications{
+  position:absolute;
+  top:220px;left:24px;right:24px;
+  z-index:10;
+  display:flex;flex-direction:column;gap:12px;
+}
+.op-app-frames .notif-card{
+  background:#fff;
+  border-radius:20px;
+  padding:18px 20px;
+  display:flex;align-items:flex-start;gap:14px;
+  box-shadow:0 4px 20px rgba(0,0,0,0.08);
+}
+.op-app-frames .notif-card.unread{
+  border-left:3px solid #3d8ef0;
+}
+.op-app-frames .notif-icon{
+  width:42px;height:42px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.op-app-frames .notif-icon svg{width:22px;height:22px;display:block;}
+.op-app-frames .notif-icon.blue{color:#1a73e8;}
+.op-app-frames .notif-icon.green{color:#2e7d32;}
+.op-app-frames .notif-icon.orange{color:#e65100;}
+.op-app-frames .notif-icon.blue{background:#e8f0fe;}
+.op-app-frames .notif-icon.green{background:#e8f5e9;}
+.op-app-frames .notif-icon.orange{background:#fff3e0;}
+.op-app-frames .notif-.notif-title{font-size:14px;font-weight:600;color:#0f172a;margin-bottom:3px;}
+.op-app-frames .notif-src{font-size:11px;color:#94a3b8;margin-bottom:5px;}
+.op-app-frames .notif-msg{font-size:12px;color:#64748b;line-height:1.4;}
+.op-app-frames .notif-time{font-size:11px;color:#94a3b8;flex-shrink:0;}
+.op-app-frames .s3 .caption-strip{background:#f8fafc;}
+
+/* ── SCREENSHOT 4: BOOKINGS ─────────────────────── */
+.op-app-frames .s4{background:#fff;}
+.op-app-frames .s4 .top-bg{
+  position:absolute;top:0;left:0;right:0;height:280px;
+  background:linear-gradient(160deg,#0d2137 0%,#1565c0 100%);
+}
+.op-app-frames .s4 .top-text{
+  position:absolute;top:68px;left:36px;right:36px;z-index:10;
+}
+.op-app-frames .s4 .top-text .eyebrow{
+  font-size:11px;font-weight:600;
+  letter-spacing:0.15em;text-transform:uppercase;
+  color:rgba(255,255,255,0.6);margin-bottom:12px;
+}
+.op-app-frames .s4 .top-text h2{
+  font-family:var(--font-display);
+  font-size:36px;font-weight:800;
+  color:#fff;line-height:1.15;
+}
+.op-app-frames .s4 .empty-state{
+  position:absolute;
+  top:220px;left:24px;right:24px;
+  z-index:10;
+  background:#fff;
+  border-radius:24px;
+  box-shadow:0 8px 40px rgba(0,0,0,0.1);
+  padding:22px 24px 26px;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  text-align:center;
+}
+.op-app-frames .s4 .empty-illo{margin:0;}
+.op-app-frames .s4 .empty-illo svg{width:188px;height:188px;display:block;}
+.op-app-frames .empty-title{font-family:var(--font-display);font-size:22px;font-weight:700;color:#0f172a;}
+.op-app-frames .empty-sub{font-size:13px;color:#94a3b8;line-height:1.6;max-width:220px;}
+.op-app-frames .empty-btn{
+  margin-top:8px;
+  border:2px solid #3d8ef0;
+  color:#3d8ef0;
+  background:#fff;
+  border-radius:50px;
+  padding:14px 40px;
+  font-size:15px;font-weight:600;
+  letter-spacing:0.01em;
+  cursor:pointer;
+  transition:all 0.2s;
+}
+.op-app-frames .s4 .empty-title{font-size:17px;font-weight:700;letter-spacing:-0.02em;}
+.op-app-frames .s4 .empty-sub{font-size:11px;line-height:1.5;max-width:200px;margin-top:0;}
+.op-app-frames .s4 .empty-btn{
+  margin-top:2px;
+  padding:9px 28px;
+  font-size:13px;
+  border-width:1.5px;
+}
+.op-app-frames .s4 .steps{
+  position:absolute;
+  top:590px;left:24px;right:24px;
+  z-index:10;
+  display:flex;gap:8px;
+}
+.op-app-frames .step-chip{
+  flex:1;
+  background:#f1f5f9;
+  border-radius:16px;
+  padding:16px 12px;
+  text-align:center;
+}
+.op-app-frames .step-num{
+  font-size:11px;font-weight:700;
+  color:#3d8ef0;letter-spacing:0.1em;
+  text-transform:uppercase;margin-bottom:6px;
+}
+.op-app-frames .step-label{font-size:12px;font-weight:500;color:#334155;line-height:1.4;}
+.op-app-frames .s4 .caption-strip{background:#fff;}
+/* Scale the 430x932 promo frame to the release-page card width. */
+.op-frame-viewport {
+  width: 100%;
+  aspect-ratio: 430 / 932;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.op-app-frames .frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 430px;
+  height: 932px;
+  transform-origin: top left;
+  transform: scale(calc(100cqw / 430px));
+  box-shadow: none;
+}
+/* Keep bookings title aligned with the inbox notification title style. */
+.op-app-frames .s4 .empty-title {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: normal;
+  color: #0f172a;
+}
